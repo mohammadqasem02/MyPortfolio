@@ -1,16 +1,17 @@
 import "./Certificates.css";
-
+import c1 from "../../../assets/images/Asp-core0Certificate.jpg";
+import c2 from "../../../assets/images/critificate react.jpg";
 const certificates = [
   {
     id: 1,
-    image: "../../../assets/images/Asp-core0Certificate.jpg",
+    image: c1,
     title: "AspCore Development Certificate",
     from: "Udemy",
     link: "https://www.udemy.com/course/aspnet-core-development/", // Example link
   },
   {
     id: 2,
-    image: "../../../assets/images/critificate react.jpg",
+    image: c2,
     title: "React JS Certification",
     from: "Udemy",
     link: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", // Example link
@@ -30,11 +31,7 @@ export const Certificates = () => {
               rel="noopener noreferrer"
               className="certificate__link"
             >
-              <img
-                src={certificate.image}
-                alt={certificate.title}
-                className="certificate__image"
-              />
+              <img src={certificate.image} className="certificate__image" />
               <div className="certificate__details">
                 <h3 className="certificate__title">{certificate.title}</h3>
                 <p className="certificate__from">{certificate.from}</p>

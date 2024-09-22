@@ -1,5 +1,4 @@
 @import "../../vars.css";
-@import "../../App.css";
 
 .header {
     position: fixed;
@@ -12,12 +11,12 @@
 }
 
 .nav {
-    position: relative;
     height: var(--header-height);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding-right: 2rem;
+    padding: 0 2rem;
+    position: relative;
 }
 
 .nav__logo {
@@ -43,157 +42,111 @@
 }
 
 .nav__toggle {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
 .nav__menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    background-color: hsla(0, 0%, 0%, .75);
-    width: 100%;
-    text-align: center;
-    padding-block: 1.8rem 5rem;
-    backdrop-filter: blur(8px);
-    transition: top .4s;
+    display: flex;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    backdrop-filter: none;
+
+}
+
+.nav__menu.open {
+    display: flex;
 }
 
 .nav__menu.open {
     top: 0;
 }
 
-.nav__title,
-.nav__name,
-.nav__close {
-    color: var(--first-color);
-}
-
-
-.nav__title {
-    display: block;
-    font-size: var(--smaller-font-size);
-    font-weight: var(--font-semi-bold);
-    margin-bottom: 3.5rem;
-}
-
-
-
 .nav__list {
     display: flex;
-    flex-direction: column;
-    row-gap: 2.5rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav__item {
+    transition: transform 0.3s;
+}
+
+.nav__item:hover {
+    transform: scale(1.05);
 }
 
 .nav__link {
-    position: relative;
     color: var(--text-color-light);
     font-size: var(--h3-font-size);
     font-weight: var(--font-semi-bold);
-    transition: color .3s;
-}
-
-.nav__link::after {
-    content: '';
-    width: 25%;
-    height: 2px;
-    background-color: var(--white-color);
-    position: absolute;
-    left: 0;
-    bottom: -.5rem;
-    transition: width .3s;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .nav__link:hover {
     color: var(--first-color);
-}
-
-.nav__link:hover::after {
-    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav__close {
     position: absolute;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     top: 1rem;
     right: 1.5rem;
     cursor: pointer;
 }
 
 @media screen and (max-width: 1151px) {
-    .nav__menu {
-        position: fixed;
-        top: -100%;
-        /* Starts off-screen */
-        left: 0;
-        background-color: hsla(0, 0%, 0%, 0.75);
-        width: 100%;
-        text-align: center;
-        padding-block: 1.8rem 5rem;
-        backdrop-filter: blur(8px);
-        transition: top 0.4s ease-in-out;
-
+    .nav__toggle {
+        font-size: 1.5rem;
     }
 
+    .nav__buttons {
+        padding-left: 12rem;
+    }
+
+    .nav__menu {
+        display: none;
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: hsla(0, 0%, 0%, .75);
+        width: 100%;
+        text-align: left;
+        padding: 2rem;
+        transition: top .4s;
+    }
 
     .nav__menu.open {
         top: 0;
-
-    }
-
-    .nav__toggle {
-        font-size: 1.25rem;
-        cursor: pointer;
-        display: grid;
-
-        place-items: center;
-    }
-
-    .nav__link {
-        font-size: 1.25rem;
-
     }
 
     .nav__list {
         flex-direction: column;
-
         row-gap: 2rem;
-    }
-
-    .nav__close {
-        font-size: 1.5rem;
-
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        cursor: pointer;
     }
 }
 
-/* Desktop styles */
-@media screen and (min-width: 1151px) {
-    .nav__menu {
-        position: static;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        backdrop-filter: none;
-        background-color: transparent;
-        box-shadow: none;
-        transition: none;
+@media screen and (max-width: 768px) {
+    .nav {
+        padding: 0 1rem;
     }
 
     .nav__toggle {
-        display: none;
+        font-size: 1.5rem;
     }
 
-    .nav__close {
-        display: none;
+    .nav__title {
+        font-size: var(--small-font-size);
+        margin-bottom: 1rem;
     }
 
-    .nav__list {
-        flex-direction: row;
-        column-gap: 2rem;
+    .nav__link {
+        font-size: 1.125rem;
     }
 }

@@ -9,30 +9,31 @@ export const Navbar = () => {
   const [activeItem, setActiveItem] = useState("");
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prev) => !prev); // Toggle the menu state
   };
 
   const closeMenu = () => {
-    setMenuOpen(false);
+    setMenuOpen(false); // Close the menu
   };
 
   const handleItemClick = (item) => {
     setActiveItem(item);
-    closeMenu();
+    closeMenu(); // Close the menu when an item is clicked
   };
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1151) {
         setIsMobile(false);
-        closeMenu();
+        setMenuOpen(true); // Show menu on larger screens
       } else {
         setIsMobile(true);
+        closeMenu(); // Close the menu on smaller screens
       }
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize();
+    handleResize(); // Run on initial load
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -47,7 +48,7 @@ export const Navbar = () => {
           <span className="nav__logo-name">Mohd Qas.</span>
         </a>
         <div
-          className={`nav__menu ${menuOpen && isMobile ? "open" : ""}`}
+          className={`nav__menu ${isMobile && menuOpen ? "open" : ""}`}
           id="nav-menu"
         >
           <ul className="nav__list">
