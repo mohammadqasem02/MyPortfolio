@@ -1,0 +1,115 @@
+@import "../../vars.css";
+
+.certificates {
+    background-color: #f8f9fa;
+    padding: 4rem 1rem;
+
+    margin: 4rem 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.certificates__title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.certificates__container {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    gap: 2rem;
+    padding: 1rem;
+    margin: 2rem 0;
+
+}
+
+.certificate__card {
+    background: linear-gradient(to bottom right, #ffffff, #e9ecef);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 280px;
+    flex: 0 0 auto;
+    border: 1px solid #dee2e6;
+    transform: scale(0.98);
+}
+
+.certificate__card:hover {
+    transform: scale(1);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+
+.certificate__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.certificate__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.certificate__card:hover .certificate__image {
+    transform: scale(1.1);
+}
+
+.certificate__details {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.certificate__title {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.certificate__card:hover .certificate__title {
+    color: #007bff;
+}
+
+.certificate__from {
+    font-size: 1rem;
+    color: #666;
+}
+
+.certificate__card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 123, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.certificate__card:hover::after {
+    opacity: 1;
+}
