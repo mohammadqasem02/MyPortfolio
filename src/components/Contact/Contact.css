@@ -5,7 +5,6 @@
 .contact__container {
     display: flex;
     flex-direction: column;
-    /* Stack items on small screens */
     gap: 2rem;
 }
 
@@ -45,7 +44,6 @@
     row-gap: 1.25rem;
 }
 
-/* Responsive input fields */
 .contact__box {
     position: relative;
     width: 100%;
@@ -84,7 +82,7 @@
     transition: top .4s, opacity .4s;
 }
 
-/* Social links */
+
 .contact__social {
     display: flex;
     flex-direction: column;
@@ -113,58 +111,44 @@
     background-color: var(--first-color);
 }
 
-/* Responsive adjustments */
 @media screen and (min-width: 576px) {
     .contact__container {
         flex-direction: row;
-        /* Arrange items in a row */
     }
 
     .contact__data,
     .contact__mail {
         flex: 1;
-        /* Allow them to grow */
         margin: 1rem;
-        /* Add margin between sections */
     }
 
     .contact__data {
         max-width: 350px;
-        /* Limit width of contact data */
     }
 
     .contact__social {
         width: 100%;
-        /* Ensure social links take full width */
         margin-top: 2rem;
-        /* Add spacing above social links */
     }
 }
 
 @media screen and (min-width: 1150px) {
     .contact__container {
         display: grid;
-        /* Use grid layout for larger screens */
         grid-template-columns: 1fr 2fr;
-        /* Two columns: left and right */
         gap: 2rem;
-        /* Space between columns */
     }
 
     .contact__data {
         padding: 3rem;
-        /* Add padding for better spacing */
     }
 
     .contact__mail {
         padding: 3rem;
-        /* Adjust padding for uniformity */
     }
 
     .contact__social {
         grid-column: 1 / -1;
-        /* Span social links across full width */
         margin-top: 2rem;
-        /* Add spacing above social links */
     }
 }

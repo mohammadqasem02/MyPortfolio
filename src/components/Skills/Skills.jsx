@@ -5,6 +5,7 @@ import {
   FaReact,
   FaBootstrap,
   FaDatabase,
+  FaReacteurope,
 } from "react-icons/fa";
 import { SiDotnet, SiTailwindcss } from "react-icons/si";
 import { motion } from "framer-motion";
@@ -28,15 +29,16 @@ const CsharpIcon = () => (
 const skills = [
   { name: "HTML5", level: 100, icon: <FaHtml5 /> },
   { name: "CSS", level: 98, icon: <FaCss3Alt /> },
-  { name: "JavaScript", level: 92, icon: <FaJsSquare /> },
-  { name: "React", level: 82, icon: <FaReact /> },
+  { name: "JavaScript", level: 98, icon: <FaJsSquare /> },
+  { name: "React", level: 90, icon: <FaReact /> },
   { name: "Bootstrap", level: 100, icon: <FaBootstrap /> },
   { name: "Tailwind", level: 100, icon: <SiTailwindcss /> },
   { name: "jQuery", level: 65, icon: <FaJsSquare /> },
   { name: "SQL-DB", level: 85, icon: <FaDatabase /> },
   { name: "C#", level: 85, icon: <CsharpIcon /> },
   { name: "ASP.NET Core", level: 90, icon: <SiDotnet /> },
-  { name: "ASP.NET MVC", level: 90, icon: <SiDotnet /> },
+  { name: "ASP.NET MVC", level: 95, icon: <SiDotnet /> },
+  { name: "React Native", level: 80, icon: <FaReacteurope /> },
 ];
 
 export const Skills = () => {

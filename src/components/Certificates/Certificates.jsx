@@ -1,20 +1,41 @@
 import "./Certificates.css";
 import c1 from "../../../assets/images/Asp-core0Certificate.jpg";
 import c2 from "../../../assets/images/critificate react.jpg";
+import c3 from "../../../assets/images/Cirteficate-StepByStep2-1.png";
+import c4 from "../../../assets/images/frontend_developer_react certificate-1.png";
+import c5 from "../../../assets/images/javascript_intermediate certificate-1.png";
 const certificates = [
   {
     id: 1,
     image: c1,
     title: "AspCore Development Certificate",
     from: "Udemy",
-    link: "https://www.udemy.com/course/aspnet-core-development/", // Example link
+    link: "https://www.udemy.com/course/aspnet-core-development/",
   },
   {
     id: 2,
     image: c2,
     title: "React JS Certification",
     from: "Udemy",
-    link: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", // Example link
+    link: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/",
+  },
+  {
+    id: 3,
+    image: c3,
+    title: "Full Stack Certificate",
+    from: "Step By Step",
+  },
+  {
+    id: 4,
+    image: c4,
+    title: "React JS Certification",
+    from: "Hacker Rank",
+  },
+  {
+    id: 5,
+    image: c5,
+    title: "JavaScript Certificate",
+    from: "Hacker Rank",
   },
 ];
 

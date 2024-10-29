@@ -18,7 +18,7 @@ const projectVariants = {
   },
 };
 
-export const Projects = () => {
+const Projects = () => {
   return (
     <section className="projects section" id="projects">
       <h2 className="section__title-1">
@@ -71,3 +71,4 @@ export const Projects = () => {
     </section>
   );
 };
+export default Projects;

@@ -9,32 +9,31 @@ export const Navbar = () => {
   const [activeItem, setActiveItem] = useState("");
 
   const toggleMenu = () => {
-    setMenuOpen((prev) => !prev); // Toggle the menu state
+    setMenuOpen((prev) => !prev);
   };
 
   const closeMenu = () => {
-    setMenuOpen(false); // Close the menu
+    setMenuOpen(false); // to close the menu
   };
 
   const handleItemClick = (item) => {
     setActiveItem(item);
-    closeMenu(); // Close the menu when an item is clicked
+    closeMenu(); // close the menu when an item is clicked
   };
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1151) {
         setIsMobile(false);
-        setMenuOpen(true); // Show menu on larger screens
+        setMenuOpen(true); // show menu on larger screens
       } else {
         setIsMobile(true);
-        closeMenu(); // Close the menu on smaller screens
+        closeMenu(); // close the menu on smaller screens
       }
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Run on initial load
-
+    handleResize();
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -70,8 +69,8 @@ export const Navbar = () => {
                   href={`#${item}`}
                   className="nav__link"
                   onClick={() => handleItemClick(item)}
-                  whileHover={{ color: "#ff6347" }} // Change color on hover
-                  transition={{ duration: 0.2 }} // Transition for color change
+                  whileHover={{ color: "#ff6347" }} // change color on hover
+                  transition={{ duration: 0.2 }} // transition for color change
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
                 </motion.a>
